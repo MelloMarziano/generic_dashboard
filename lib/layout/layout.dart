@@ -34,32 +34,34 @@ class Layout extends StatelessWidget {
       body: Container(
         height: MediaQuery.of(context).size.height * 1,
         width: MediaQuery.of(context).size.width * 1,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Visibility(
-              visible: widthScreen > 1500,
-              child: Container(
-                padding: AppPadding.globalPadding,
+        child: SingleChildScrollView(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Visibility(
+                visible: widthScreen > 1500,
+                child: Container(
+                  padding: AppPadding.globalPadding,
+                  height: MediaQuery.of(context).size.height * 1,
+                  width: MediaQuery.of(context).size.width * 0.15,
+                  child: SideBar(),
+                ),
+              ),
+              Container(
+                //padding: AppPadding.globalPadding,
                 height: MediaQuery.of(context).size.height * 1,
-                width: MediaQuery.of(context).size.width * 0.15,
-                child: SideBar(),
+                width:
+                    (widthScreen > 1500) ? widthScreen * 0.85 : widthScreen * 1,
+                child: Column(
+                  children: [
+                    Navbar(),
+                    ContentApp(),
+                  ],
+                ),
               ),
-            ),
-            Container(
-              //padding: AppPadding.globalPadding,
-              height: MediaQuery.of(context).size.height * 1,
-              width:
-                  (widthScreen > 1500) ? widthScreen * 0.85 : widthScreen * 1,
-              child: Column(
-                children: [
-                  Navbar(),
-                  ContentApp(),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
