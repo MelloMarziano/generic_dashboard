@@ -23,7 +23,7 @@ class SmallCard extends StatelessWidget {
     } else if (widthScreen > 420 && widthScreen < 900) {
       finalWith = 380;
     } else if (widthScreen > 900 && widthScreen < 1500) {
-      finalWith = 380;
+      finalWith = 300;
     } else if (widthScreen > 1500) {
       finalWith = 380;
     }
@@ -37,7 +37,7 @@ class SmallCard extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [
+            /* boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 1,
@@ -47,13 +47,14 @@ class SmallCard extends StatelessWidget {
                   0,
                 ), // changes position of shadow
               ),
-            ],
+            ],*/
           ),
         ),
         Positioned(
           top: -15,
           left: 20,
           child: Container(
+            alignment: Alignment.center,
             height: 70,
             width: 70,
             decoration: BoxDecoration(
@@ -70,6 +71,11 @@ class SmallCard extends StatelessWidget {
                   ), // changes position of shadow
                 ),
               ],
+            ),
+            child: Icon(
+              icon,
+              color: Colors.white,
+              size: 32,
             ),
           ),
         ),
