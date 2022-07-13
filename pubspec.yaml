@@ -38,6 +38,7 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   provider: ^6.0.3
   data_table_2: ^2.3.5
+  responsive_ui: ^3.0.0
 
 dev_dependencies:
   flutter_test:

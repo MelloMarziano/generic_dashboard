@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 class ChartCard extends StatelessWidget {
   final Color widgetColor;
   final String info;
+  final BuildContext ctnx;
 
   const ChartCard({
     super.key,
     required this.widgetColor,
     required this.info,
+    required this.ctnx,
   });
 
   @override
   Widget build(BuildContext context) {
-    var widthScreen = MediaQuery.of(context).size.width;
+    var widthScreen = MediaQuery.of(ctnx).size.width;
     var finalWith = 0.0;
     if (widthScreen <= 390) {
       finalWith = double.infinity;
@@ -23,7 +25,7 @@ class ChartCard extends StatelessWidget {
     } else if (widthScreen > 900 && widthScreen < 1500) {
       finalWith = widthScreen * 0.33;
     } else if (widthScreen > 1500) {
-      finalWith = widthScreen * 0.40;
+      finalWith = widthScreen * 0.26;
     }
     return Stack(
       fit: StackFit.passthrough,
@@ -31,7 +33,10 @@ class ChartCard extends StatelessWidget {
       children: [
         Container(
           height: 320,
-          width: finalWith,
+          //width: finalWith,
+          margin: const EdgeInsets.symmetric(
+            horizontal: 10,
+          ),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
@@ -54,7 +59,7 @@ class ChartCard extends StatelessWidget {
           right: 20,
           child: Container(
             alignment: Alignment.center,
-            height: 150,
+            height: 220,
             width: double.infinity,
             decoration: BoxDecoration(
               color: widgetColor,

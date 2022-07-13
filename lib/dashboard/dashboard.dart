@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:generic_dashboard/dashboard/chart_card.dart';
 import 'package:generic_dashboard/dashboard/small_card.dart';
 import 'package:generic_dashboard/widgets/data_datable.dart';
+import 'package:responsive_ui/responsive_ui.dart';
 
 class DashboardPage extends StatelessWidget {
   @override
@@ -34,65 +35,129 @@ class DashboardPage extends StatelessWidget {
             SizedBox(
               height: 25,
             ),
-            Center(
-              child: Wrap(
-                crossAxisAlignment: WrapCrossAlignment.center,
-                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //direction: Axis.vertical,
-                spacing: 20,
-                runSpacing: 30,
-                children: [
-                  const SmallCard(
-                    widgetColor: Colors.black,
+            const Responsive(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //direction: Axis.vertical,
+
+              runSpacing: 30,
+              children: [
+                Div(
+                  divison: Division(
+                    colXS: 12,
+                    colM: 6,
+                    colL: 3,
+                  ),
+                  child: SmallCard(
+                    widgetColor: Color.fromARGB(255, 6, 158, 46),
                     icon: Icons.mail,
                     info: 'Esto es lo que dira',
                   ),
-                  const SmallCard(
+                ),
+                Div(
+                  divison: Division(
+                    colXS: 12,
+                    colM: 6,
+                    colL: 3,
+                  ),
+                  child: SmallCard(
+                    widgetColor: Color.fromARGB(255, 197, 19, 3),
+                    icon: Icons.mail,
+                    info: 'Esto es lo que dira',
+                  ),
+                ),
+                Div(
+                  divison: Division(
+                    colXS: 12,
+                    colM: 6,
+                    colL: 3,
+                  ),
+                  child: SmallCard(
                     widgetColor: Color(0xFF358fed),
                     icon: Icons.mail,
                     info: 'Esto es lo que dira',
                   ),
-                  const SmallCard(
-                    widgetColor: Color(0xFF5fb562),
+                ),
+                Div(
+                  divison: Division(
+                    colXS: 12,
+                    colM: 6,
+                    colL: 3,
+                  ),
+                  child: SmallCard(
+                    widgetColor: Colors.black,
                     icon: Icons.mail,
                     info: 'Esto es lo que dira',
                   ),
-                  const SmallCard(
-                    widgetColor: Color(0xFFe73774),
-                    icon: Icons.mail,
-                    info: 'Esto es lo que dira',
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
             const SizedBox(
               height: 40,
             ),
-            Wrap(
-              crossAxisAlignment: WrapCrossAlignment.start,
+            Responsive(
+              //crossAxisAlignment: CrossAxisAlignment.center,
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               alignment: WrapAlignment.spaceBetween,
-              runAlignment: WrapAlignment.spaceBetween,
+              //runAlignment: WrapAlignment.spaceBetween,
               //mainAxisAlignment: MainAxisAlignment.spaceBetween,
               //direction: Axis.vertical,
-              spacing: 20,
+
               runSpacing: 30,
               children: [
-                const ChartCard(
-                  widgetColor: Color(0xFF358fed),
-                  info: 'este e otro',
+                Div(
+                  divison: const Division(
+                    colXS: 12,
+                    colM: 12,
+                    colL: 4,
+                  ),
+                  child: ChartCard(
+                    widgetColor: Colors.green,
+                    info: 'este e otro',
+                    ctnx: context,
+                  ),
                 ),
-                const ChartCard(
-                  widgetColor: Color(0xFF5fb562),
-                  info: 'este e otro',
+                Div(
+                  divison: const Division(
+                    colXS: 12,
+                    colM: 12,
+                    colL: 4,
+                  ),
+                  child: ChartCard(
+                    widgetColor: const Color(0xFF358fed),
+                    info: 'este e otro',
+                    ctnx: context,
+                  ),
+                ),
+                Div(
+                  divison: const Division(
+                    colXS: 12,
+                    colM: 12,
+                    colL: 4,
+                  ),
+                  child: ChartCard(
+                    widgetColor: Colors.red,
+                    info: 'este e otro',
+                    ctnx: context,
+                  ),
                 ),
               ],
             ),
             SizedBox(
               height: 25,
             ),
-            /*  Center(
-             child: DataTableWidget(),
-            ),*/
+            Responsive(
+              children: [
+                Div(
+                  divison: const Division(
+                    colXS: 12,
+                    colM: 12,
+                    colL: 12,
+                  ),
+                  child: DataTableWidget(),
+                ),
+              ],
+            ),
           ],
         ),
       ),

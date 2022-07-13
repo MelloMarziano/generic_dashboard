@@ -19,7 +19,10 @@ class DataTableWidget extends StatelessWidget {
     }
     return Container(
       height: 400,
-      width: finalWith,
+      //width: finalWith,
+      margin: const EdgeInsets.symmetric(
+        horizontal: 10,
+      ),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),

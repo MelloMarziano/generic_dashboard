@@ -33,7 +33,10 @@ class SmallCard extends StatelessWidget {
       children: [
         Container(
           height: 130,
-          width: finalWith,
+          //width: finalWith,
+          margin: const EdgeInsets.symmetric(
+            horizontal: 5,
+          ),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),

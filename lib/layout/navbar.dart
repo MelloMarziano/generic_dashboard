@@ -7,6 +7,9 @@ class Navbar extends StatelessWidget {
   Widget build(BuildContext context) {
     var widthScreen = MediaQuery.of(context).size.width;
     return Container(
+      margin: EdgeInsets.symmetric(
+        horizontal: 20,
+      ),
       alignment: Alignment.centerLeft,
       height: MediaQuery.of(context).size.height * 0.10,
       width: (widthScreen > 1500) ? widthScreen * 0.85 : widthScreen * 1,

@@ -48,13 +48,13 @@ class Layout extends StatelessWidget {
                   child: SideBar(),
                 ),
               ),
-              Container(
+              SizedBox(
                 //padding: AppPadding.globalPadding,
                 height: MediaQuery.of(context).size.height * 1,
                 width:
                     (widthScreen > 1500) ? widthScreen * 0.85 : widthScreen * 1,
                 child: Column(
-                  children: [
+                  children: const [
                     Navbar(),
                     ContentApp(),
                   ],
